@@ -10,12 +10,16 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
       perSystem = { config, self', inputs', pkgs, system, ... }: {
-
         # todo
         packages.default = pkgs.hello;
 
         devShells.default = pkgs.mkShell {
-          nativeBuildInputs = with pkgs; [ gleam ];
+          nativeBuildInputs = with pkgs; [
+            gleam
+            erlang
+            # rebar3
+            # esbuild
+          ];
         };
       };
     };
