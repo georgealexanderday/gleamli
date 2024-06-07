@@ -17,8 +17,8 @@
           nativeBuildInputs = with pkgs; [
             gleam
             erlang
-            # rebar3
-            # esbuild
+            rebar3
+            esbuild
           ];
         };
       };
